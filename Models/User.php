@@ -11,8 +11,7 @@ class User extends Model {
     protected $fillable = ['username', 'password', 'structure_ID', 'role'];
 
     // the password must be hash
-    public static function create(array $attributes = [])
-    {
+    public static function create(array $attributes = []) {
         
         if(isset($attributes['password'])) 
             $attributes['password'] = sha1($attributes['password']);
@@ -21,8 +20,7 @@ class User extends Model {
 
     }
 
-    public function update(array $attributes = [])
-    {
+    public function update(array $attributes = []) {
 
         if(isset($attributes['password'])) 
             $attributes['password'] = sha1($attributes['password']);
