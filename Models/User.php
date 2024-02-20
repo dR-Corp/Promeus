@@ -10,12 +10,6 @@ class User extends Model {
 
     protected $fillable = ['username', 'password', 'structure_ID', 'role'];
 
-
-    public function structure() {
-        return Structure::find($this->getId());
-    }
-
-
     // the password must be hash
     public static function create(array $attributes = [])
     {
