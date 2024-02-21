@@ -4,8 +4,18 @@
 class HomeController {
 
     public function accueil($params) {
+        $users = User::all();
         $view = new PublicView("accueil");
-        $view->render();
+        $view->render([
+            "users" => $users
+        ]);
+    }
+
+    public function addUser($params) {
+        echo "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz";
+        echo "<pre>"; print_r($_POST);
+        echo "<pre>"; print_r($params); exit;
+        // User::create($params);
     }
 
     public function dashboard($params) {

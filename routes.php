@@ -13,6 +13,7 @@ Router::set("register", "AuthController", "register");
 //ADMIN
 Router::set("dashboard", "HomeController", "dashboard");
 Router::set("users", "HomeController", "users");
+Router::set("add-user", "HomeController", "addUser");
 
 
 // LES ROUTES CONCERNANT LE CRUD ET LE SPP

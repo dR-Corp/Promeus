@@ -5,10 +5,7 @@
  */
 class User extends Model {
 
-    // const ROLE_USER = "USER";
-    // const ROLE_SUPER = "GOKU";
-
-    protected $fillable = ['username', 'password', 'structure_ID', 'role'];
+    protected $fillable = ['name', 'email', 'password', 'profile'];
 
     // the password must be hash
     public static function create(array $attributes = []) {

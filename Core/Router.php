@@ -55,14 +55,14 @@ class Router {
         // }
 
         // extract GET params
-        if($_GET) {
+        if(isset($_GET)) {
             foreach($_GET as $key => $val ) {
                 $params[$key] = $val;
             }
         }
 
         // extract POST params
-        if($_POST) {
+        if(isset($_POST)) {
             foreach($_POST as $key => $val ) {
                 $params[$key] = $val;
             }
@@ -85,7 +85,7 @@ class Router {
         foreach($this->routes as $route) {
             if(($varsValues = $this->match($route["url"])) !== false) {
                 $matched = true;
-                $params = null;
+                $params = self::getParams($route["url"]);
                 if($route["vars"] != "") {
                     // echo '<pre>'; print_r($route);
                     // echo '<pre>'; print_r($varsValues);

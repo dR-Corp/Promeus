@@ -28,33 +28,30 @@
 		</section>
 		<!-- Features section-->
 		<section class="py-5">
+
+		<form action="add-user" method="post">
+			<input type="text" name="name" id="name">
+			<input type="email" name="email" id="email">
+			<input type="password" name="password" id="password">
+			<input type="submit" value="envoyer" name="envoyer">
+		</form>
+
 		<div class="container py-5">
 			<div class="row text-center">
 			<div class="col-lg-10 mx-auto">
 				<div class="card border-0 shadow">
 				<div class="card-body p-5">
 					<div class="row">
-					<div class="col-lg-4 mb-4 mb-lg-0">
-							<svg class="svg-icon mb-3 text-primary svg-icon-big">
-							<use xlink:href="#list-details-1"> </use>
-							</svg>
-						<h2 class="h5">Search your tool</h2>
-						<p class="text-muted text-small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-					</div>
-					<div class="col-lg-4 mb-4 mb-lg-0">
-							<svg class="svg-icon mb-3 text-primary svg-icon-big">
-							<use xlink:href="#survey-1"> </use>
-							</svg>
-						<h2 class="h5">Gather your info</h2>
-						<p class="text-muted text-small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-					</div>
-					<div class="col-lg-4">
-							<svg class="svg-icon mb-3 text-primary svg-icon-big">
-							<use xlink:href="#stack-1"> </use>
-							</svg>
-						<h2 class="h5">Build your startup</h2>
-						<p class="text-muted text-small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-					</div>
+						<?php foreach ($users as $user): ?>
+						<div class="col-lg-4 mb-4 mb-lg-0">
+								<svg class="svg-icon mb-3 text-primary svg-icon-big">
+								<use xlink:href="#list-details-1"> </use>
+								</svg>
+							<h2 class="h5"><?=$user->getName()?></h2>
+							<p class="text-muted text-small mb-0"> <?=$user->getEmail()?> </p>
+							<p class="text-muted text-small mb-0"> <?=$user->getProfile()?> </p>
+						</div>
+						<?php endforeach; ?>
 					</div>
 				</div>
 				</div>
