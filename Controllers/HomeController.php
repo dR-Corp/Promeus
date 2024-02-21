@@ -12,10 +12,10 @@ class HomeController {
     }
 
     public function addUser($params) {
-        echo "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz";
-        echo "<pre>"; print_r($_POST);
-        echo "<pre>"; print_r($params); exit;
-        // User::create($params);
+        User::create($params);
+        // $router = new Router("accueil");
+        // $router->redirect("accueil");
+        header("Location: accueil");
     }
 
     public function dashboard($params) {
