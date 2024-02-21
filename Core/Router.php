@@ -111,10 +111,7 @@ class Router {
         }
     }
 
-    public function redirect($request) {
-        if(key_exists($request, $this->routes)) { 
-            header("Location: ".HOST.$request);
-            exit;
-        }
+    public static function redirect($request) {
+        header("Location: ".$request);
     }
 }

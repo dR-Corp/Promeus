@@ -13,9 +13,7 @@ class HomeController {
 
     public function addUser($params) {
         User::create($params);
-        // $router = new Router("accueil");
-        // $router->redirect("accueil");
-        header("Location: accueil");
+        Router::redirect("accueil");
     }
 
     public function dashboard($params) {
